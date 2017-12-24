@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 
 class Demo extends Component {
     render() {
-        return <div>dem1112312312231331312o</div>
+        return <div>我是一个帅哥</div>
     }
 }
 
+export default Demo;
 
 ReactDOM.render( <Demo/>,document.body.appendChild(document.createElement('div')));
 

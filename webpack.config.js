@@ -5,7 +5,7 @@ const config = {
     entry: [
         'webpack/hot/dev-server',
         'webpack-dev-server/client?http://localhost:3000',
-        './src/main.js'
+        './src/index.js'
     ],
     resolve: {
         extensions:['.js','.json','.jsx']
