@@ -3,8 +3,8 @@ const path = require('path');
 
 const config = {
     entry: [
-        'webpack/hot/dev-server',
-        'webpack-dev-server/client?http://localhost:3000',
+        // 'webpack/hot/dev-server',
+        // 'webpack-dev-server/client?http://localhost:3000',
         './src/index.js'
     ],
     resolve: {
@@ -25,7 +25,14 @@ const config = {
         new webpack.NamedModulesPlugin(),
 
         new webpack.HotModuleReplacementPlugin(),
-    ]
+    ],
+    devServer: {
+        // contentBase: path.join(__dirname, "dist"),
+        compress: true,
+        port: 3000,
+        hot:true,
+        open:true
+    }
 }
 
 module.exports = config;

@@ -1,15 +1,17 @@
 import React,{ Component } from 'react';
 import ReactDOM from 'react-dom';
+import D from './components/demo'
 
 class Demo extends Component {
     render() {
-        return <div>我是一个帅哥</div>
+        return <D></D>
     }
 }
 
-export default Demo;
+// export default Demo;
 
-ReactDOM.render( <Demo/>,document.body.appendChild(document.createElement('div')));
+
+ReactDOM.render( <Demo/>,document.getElementById('root'));
 
 
 if (typeof module !== 'undefined' && module.hot) {

@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha --compilers js:babel-register --require ./test/test_helper.js --recursive",
     "test:watch": "npm test --watch",
-    "dev": "webpack-dev-server --port 3000"
+    "dev": "webpack-dev-server"
   },
   "author": "",
   "license": "ISC",
