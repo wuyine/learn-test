@@ -32,7 +32,8 @@ const config = {
         port: 3000,
         hot:true,
         open:true
-    }
+    },
+    devtool : '#inline-source-map'
 }
 
 module.exports = config;

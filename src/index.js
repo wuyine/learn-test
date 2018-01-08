@@ -1,17 +1,18 @@
 import React,{ Component } from 'react';
 import ReactDOM from 'react-dom';
-import D from './components/demo'
 
-class Demo extends Component {
-    render() {
-        return <D></D>
-    }
-}
+import App from './components/App'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import reducer from './reducer'
 
-// export default Demo;
+let store = createStore(reducer,{todos:[{text:'init',complete:false}]});
 
+console.log(store.getState())
 
-ReactDOM.render( <Demo/>,document.getElementById('root'));
+ReactDOM.render( 
+    <Provider store={store} ><App/></Provider>    ,
+    document.getElementById('root'));
 
 
 if (typeof module !== 'undefined' && module.hot) {

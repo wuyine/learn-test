@@ -1,7 +1,7 @@
 // Karma configuration
 // Generated on Sat Dec 23 2017 15:02:03 GMT+0800 (中国标准时间)
 const webpackConfig = require('./webpack.config');
-
+var webpack = require('webpack');
 module.exports = function(config) {
   config.set({
 
@@ -29,7 +29,7 @@ module.exports = function(config) {
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
       //使用webpack 预处理
     preprocessors: {
-        ['*.spec.js']:['webpack', 'sourcemap']
+        ['*.spec.js']:['webpack']
     },
 
 
@@ -65,10 +65,15 @@ module.exports = function(config) {
     // if true, Karma captures browsers, runs the tests and exits
     singleRun: false,
 
+    plugins:['karma-webpack','karma-mocha','karma-chrome-launcher','karma-jasmine'],
+
     // Concurrency level
     // how many browser should be started simultaneous
     concurrency: Infinity,
 
-    webpack: webpackConfig
+    webpack: webpackConfig,
+    webpackServer: {
+      noInfo: true //please don't spam the console when running in karma!
+    }
   })
 };
