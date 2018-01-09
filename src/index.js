@@ -5,16 +5,33 @@ import App from './components/App'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import reducer from './reducer'
+console.log(reducer)
+let store = createStore(reducer);
 
-let store = createStore(reducer,{todos:[{text:'init',complete:false}]});
+// console.log(store.getState())
 
-console.log(store.getState())
+class Main extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
 
-ReactDOM.render( 
-    <Provider store={store} ><App/></Provider>    ,
-    document.getElementById('root'));
-
-
-if (typeof module !== 'undefined' && module.hot) {
-    module.hot.accept()
+        }
+    }
+    componentDidMount() {
+        
+    }
+    render() {
+        return (
+            <Provider store={store} ><App/></Provider>
+        )
+    }
 }
+export default Main;
+// ReactDOM.render( 
+//     <Provider store={store} ><App/></Provider>,
+//     document.getElementById('root'));
+
+
+// if (typeof module !== 'undefined' && module.hot) {
+//     module.hot.accept()
+// }

@@ -6,7 +6,8 @@
     "scripts": {
         "test": "mocha --compilers js:babel-register --require ./test/test_helper.js --recursive",
         "test:watch": "npm test --watch",
-        "start": "webpack-dev-server"
+        "start": "webpack-dev-server",
+        "server": "json-server db.json"
     },
     "author": "",
     "license": "ISC",
@@ -38,6 +39,7 @@
         "webpack-dev-server": "^2.9.7"
     },
     "dependencies": {
+        "json-server": "^0.12.1",
         "react": "^16.2.0",
         "react-dom": "^16.2.0",
         "react-redux": "^5.0.6",

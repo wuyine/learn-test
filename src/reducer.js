@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import { ADD_TODO,COMPLETE_TODO,SET_VISIBLE_FILTER } from './action'
 import index from './index';
 
-function visibilityFilter(state=[],action) {
+export function visibilityFilter(state=[],action) {
     switch(action.type) {
         case SET_VISIBLE_FILTER:
             return action.filter;
@@ -11,7 +11,7 @@ function visibilityFilter(state=[],action) {
     }
 }
 
-function todos(state=[],action) {
+export function todos(state=[],action) {
     switch(action.type) {
         case ADD_TODO:
             return [
