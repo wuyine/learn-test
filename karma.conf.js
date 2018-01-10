@@ -6,7 +6,7 @@ module.exports = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: './test',
+    basePath: '',
 
 
     // frameworks to use
@@ -16,7 +16,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-        '*.spec.js',//这个路径是相对于basePath
+        'test/*.spec.js',//这个路径是相对于basePath
     ],
 
 
@@ -29,14 +29,14 @@ module.exports = function(config) {
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
       //使用webpack 预处理
     preprocessors: {
-        ['*.spec.js']:['webpack']
+        '**/*.spec.js':['webpack','sourcemap'], 
     },
 
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ['progress','coverage'],
 
 
     // web server port
@@ -65,13 +65,26 @@ module.exports = function(config) {
     // if true, Karma captures browsers, runs the tests and exits
     singleRun: false,
 
-    plugins:['karma-webpack','karma-mocha','karma-chrome-launcher','karma-jasmine'],
+    plugins:['karma-webpack','karma-mocha','karma-chrome-launcher','karma-jasmine','karma-sourcemap-loader','karma-coverage'],
+
+    // optionally, configure the reporter 
+    coverageReporter: {
+      type : 'html',
+      dir : 'coverage/'
+    },
 
     // Concurrency level
     // how many browser should be started simultaneous
     concurrency: Infinity,
 
-    webpack: webpackConfig,
+    webpack:  {
+      devtool: 'inline-source-map',
+      module: {
+        loaders: [
+          { test: /\.js$/, loader: 'babel-loader',exclude:/node_modules/ }
+        ]
+      }
+    },
     webpackServer: {
       noInfo: true //please don't spam the console when running in karma!
     }

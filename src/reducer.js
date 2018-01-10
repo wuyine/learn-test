@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import { ADD_TODO,COMPLETE_TODO,SET_VISIBLE_FILTER } from './action'
-import index from './index';
+
 
 export function visibilityFilter(state=[],action) {
     switch(action.type) {

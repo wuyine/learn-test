@@ -8,7 +8,8 @@ import { addTodo,
     visibleFilters
 } from '../src/action'
 const { SHOW_ALL, SHOW_COMPLETE, SHOW_ACTIVE } = visibleFilters
-
+import { expect } from 'chai';
+import sinon from 'sinon';
 describe('reducer teset',()=>{
     const initialState = [
         {text:'todo1',complete:false},

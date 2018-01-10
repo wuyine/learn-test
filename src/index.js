@@ -4,8 +4,8 @@ import ReactDOM from 'react-dom';
 import App from './components/App'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import reducer from './reducer'
-console.log(reducer)
+import reducer from './reducer.js'
+// console.log(reducer)
 let store = createStore(reducer);
 
 // console.log(store.getState())
@@ -27,6 +27,9 @@ class Main extends Component {
     }
 }
 export default Main;
+let div = document.createElement('div');
+document.body.appendChild(div);
+ReactDOM.render(<Main></Main>,div)
 // ReactDOM.render( 
 //     <Provider store={store} ><App/></Provider>,
 //     document.getElementById('root'));

@@ -13,11 +13,12 @@ import Enzyme,{ mount } from 'enzyme';
 import React from 'react'
 import Adapter from 'enzyme-adapter-react-16';
 Enzyme.configure({ adapter: new Adapter() });
-
+import { expect } from 'chai';
+import sinon from 'sinon';
 
 describe('test mounted',()=>{
-    const wrapper = mount(<App/>);
+    // const wrapper = mount(<App/>);
     it('should add one todo',()=>{
-        wrapper.find('')
+        // wrapper.find('')
     })
 })
