@@ -13,12 +13,23 @@ import Enzyme,{ mount } from 'enzyme';
 import React from 'react'
 import Adapter from 'enzyme-adapter-react-16';
 Enzyme.configure({ adapter: new Adapter() });
-import { expect } from 'chai';
+// import { expect } from 'chai';
 import sinon from 'sinon';
 
 describe('test mounted',()=>{
-    // const wrapper = mount(<App/>);
+    const wrapper = mount(<App/>);
     it('should add one todo',()=>{
-        // wrapper.find('')
+        let input = wrapper.find('input').instance();
+        let button = wrapper.find('AddTodo').find('button');
+        input.value = 'test-todo1';
+        button.simulate('click');
+        expect(wrapper.find('li').length).toBe(1)
+        expect(wrapper.find('li').text()).toBe('test-todo1');
+
+        describe('todo complete',()=>{
+            expect(wrapper.find("Todo").prop('todo').complete).toBe(false)
+            wrapper.find('li').simulate('click');
+            expect(wrapper.find("Todo").prop('todo').complete).toBe(true)
+        })
     })
 })
