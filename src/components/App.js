@@ -47,7 +47,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return {
         onAddClick:text => dispatch(addTodo(text)),
-        onTodoClick:index => dispatch(toggleTodo(index)),
+        onTodoClick:id => dispatch(toggleTodo(id)),
         onFilterChange:filter => dispatch(setVisibilityFilter(filter))
     }
 }

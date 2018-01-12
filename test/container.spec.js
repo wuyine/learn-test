@@ -22,9 +22,11 @@ describe('test mounted',()=>{
         let input = wrapper.find('AddTodo');
         expect(input.exists()).to.be.equal(true)
         // input.value = 'test-todo1';
-        // input.simulate('keydown',{keyCode:13});
-        // expect(wrapper.find('li').length).to.be.equal(1)
-        // expect(wrapper.find('li').text()).to.be.equal('test-todo1');
+        input.simulate('keydown',{keyCode:13,target:{value:'test-todo1'}});
+        expect(wrapper.find('li').length).to.be.equal(1)
+        input.simulate('keydown',{keyCode:13,target:{value:'test-todo1'}});
+        expect(wrapper.find('li').length).to.be.equal(2)
+        expect(wrapper.find('li').first().text()).to.be.equal('test-todo1');
 
         // describe('todo complete',()=>{
         //     expect(wrapper.find("Todo").prop('todo').complete).to.be.equal(false)
