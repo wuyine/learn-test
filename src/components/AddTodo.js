@@ -7,8 +7,11 @@ class AddTodo extends Component {
         this.state = {}
         this.handleAddTodoClick = this.handleAddTodoClick.bind(this);
     }
-    handleAddTodoClick() {
-        let node = this.refs.input;
+    handleAddTodoClick(e) {
+        if(e.keyCode !== 13) {
+            return 
+        }
+        let node = e.target;
         let value = node.value;
         if(value.trim().length>0) {
             this.props.onAddClick(value)
@@ -17,10 +20,7 @@ class AddTodo extends Component {
     }
     render() {
         return (
-           <div>
-                <input type="text" ref="input" />
-                <button onClick={this.handleAddTodoClick} >Add</button>
-           </div>
+             <input style={{width:'100%'}} type="text" ref="input" placeholder="enter" onKeyDown={this.handleAddTodoClick} />
         )
     }
 }

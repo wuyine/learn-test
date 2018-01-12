@@ -5,10 +5,9 @@ import App from './components/App'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import reducer from './reducer.js'
-// console.log(reducer)
+
 let store = createStore(reducer);
 
-// console.log(store.getState())
 
 class Main extends Component {
     constructor(props) {

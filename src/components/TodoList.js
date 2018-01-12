@@ -7,10 +7,9 @@ class TodoList extends Component {
         this.state = {}
     }
     render() {
-        let { todos,onTodoClick } = this.props;
-    
+        let { todos=[],onTodoClick } = this.props;
         return (
-            <ul>{todos.map((todo,index)=><Todo key={index} todo={todo} onTodoClick={()=>onTodoClick(index)} ></Todo>)}</ul>
+            <ul>{todos.map((todo)=><Todo key={todo.id} todo={todo} onTodoClick={()=>onTodoClick(todo.id)} ></Todo>)}</ul>
         )
     }
 }

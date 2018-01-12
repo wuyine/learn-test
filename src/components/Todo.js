@@ -8,7 +8,10 @@ class Todo extends Component {
     render() {
         let { todo,onTodoClick } = this.props;
         let { text,complete } = todo;
-        let style = complete ? {textDecoration:'line-through'}:{}
+        let style = {
+
+        };
+        complete && (style = Object.assign({},style,{textDecoration:'line-through'}))
         return (
             <li onClick={onTodoClick} style={style}>{text}</li>
         )
