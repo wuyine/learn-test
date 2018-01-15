@@ -5,8 +5,9 @@ import App from './components/App'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import reducer from './reducer.js'
+import store from './store';
 
-let store = createStore(reducer);
+// let store = createStore(reducer);
 
 
 class Main extends Component {
