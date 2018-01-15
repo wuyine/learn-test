@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import sinon from 'sinon';
 describe('actions',()=>{
     it('addTodo should create addTodo action',()=>{
-        expect(actions.addTodo('test')).to.deep.equal({type:actions.ADD_TODO,payload:{text:'test',id:1,complete:false}})
+        expect(actions.addTodo('test')).to.deep.equal({type:actions.ADD_TODO,payload:{text:'test',id:0,complete:false}})
     });
     it('completeTodo should create completeTodo action',()=>{
         expect(actions.toggleTodo(1)).to.deep.equal({type:actions.COMPLETE_TODO,payload:1})
