@@ -4,6 +4,7 @@ import { addTodo,toggleTodo,setVisibilityFilter,visibleFilters } from '../action
 import AddTodo from './AddTodo'
 import Footer from './Footer'
 import TodoList from './TodoList'
+import '../css/index.scss'
 
 class App extends Component {
     constructor(props) {
@@ -16,7 +17,7 @@ class App extends Component {
     render() {
         let { dispatch,visibleTodos,onAddClick,onTodoClick,onFilterChange } = this.props;
         return (
-            <div style={{width:'400px',margin:'100px auto'}} >
+            <div className="container" style={{width:'400px',margin:'100px auto'}} >
                 <AddTodo onAddClick={onAddClick} ></AddTodo>
                 <TodoList todos={visibleTodos} onTodoClick={onTodoClick} ></TodoList>
                 <Footer  onFilterChange={onFilterChange} ></Footer>
