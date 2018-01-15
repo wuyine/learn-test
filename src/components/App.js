@@ -44,12 +44,9 @@ function mapStateToProps(state) {
         visibleTodos:selectTodos(state.todos,state.visibilityFilter),
     }
 }
-function mapDispatchToProps(dispatch) {
-    return {
-        onAddClick:text => dispatch(addTodo(text)),
-        onTodoClick:id => dispatch(toggleTodo(id)),
-        onFilterChange:filter => dispatch(setVisibilityFilter(filter))
-    }
-}
 
-export default connect(mapStateToProps,mapDispatchToProps)(App)
+export default connect(mapStateToProps,{
+    onAddClick:addTodo,
+    onTodoClick:toggleTodo,
+    onFilterChange:setVisibilityFilter
+})(App)

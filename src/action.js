@@ -9,7 +9,7 @@ export const SET_VISIBLE_FILTER = 'SET_VISIBLE_FILTER';
 let id = 0;
 export const addTodo = createAction(ADD_TODO,text => ({
     text,
-    id:++id,
+    id:id++,
     complete:false
 }));
 export const toggleTodo = createAction(COMPLETE_TODO);

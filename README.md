@@ -1,6 +1,10 @@
 # learn-test
 
-+ npm install karma-cli -g
-+ npm install karma-jasmine --save-dev
-+ npm install karma-mocha --save-dev
-+ karma init 
+## redux-devtools配置
+1. 下载依赖包
+```
+ npm install react-devtools redux-devtools-extension --save-dev
+```
+2. 谷歌应用商店下载 redux-devtools 扩展
+
+3. 

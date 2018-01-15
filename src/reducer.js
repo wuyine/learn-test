@@ -26,6 +26,7 @@ const todos = handleActions({
   }, []);
 
 const visibilityFilter = handleAction(setVisibilityFilter,(state,action)=> action.payload,'' )
+
 const todoApp = combineReducers({
     visibilityFilter,
     todos
