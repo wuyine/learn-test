@@ -16,9 +16,9 @@ describe('reducer teset',()=>{
         {text:'todo2',complete:false}
     ]
 
-    // it('should handle addTodos',()=>{
-    //     expect(todos([],addTodo('todo1'))).to.deep.equal([{text:'todo1',complete:false}])
-    // });
+    it('should handle addTodos',()=>{
+        expect(todos([],addTodo('todo1'))).to.have.lengthOf(1)
+    });
     // it('should handle complete todos',()=>{
     //     expect(todos(initialState,completeTodo(1))[1].complete).to.be.equal(true)
     // });

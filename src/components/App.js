@@ -4,7 +4,7 @@ import { addTodo,toggleTodo,setVisibilityFilter,visibleFilters } from '../action
 import AddTodo from './AddTodo'
 import Footer from './Footer'
 import TodoList from './TodoList'
-import '../css/index.scss'
+// import '../css/index.scss'
 
 class App extends Component {
     constructor(props) {

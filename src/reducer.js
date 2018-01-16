@@ -8,7 +8,7 @@ import {
  } from './action'
 
 
-const todos = handleActions({
+export const todos = handleActions({
     [addTodo](state,action) {
       return [...state,action.payload]
     },
@@ -25,7 +25,7 @@ const todos = handleActions({
     }
   }, []);
 
-const visibilityFilter = handleAction(setVisibilityFilter,(state,action)=> action.payload,'' )
+export const visibilityFilter = handleAction(setVisibilityFilter,(state,action)=> action.payload,'' )
 
 const todoApp = combineReducers({
     visibilityFilter,
