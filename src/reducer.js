@@ -4,7 +4,8 @@ import { handleActions,handleAction } from 'redux-actions';
 import { 
     addTodo,
     toggleTodo,
-    setVisibilityFilter
+    setVisibilityFilter,
+    testEpic
  } from './action'
 
 
@@ -25,11 +26,14 @@ export const todos = handleActions({
     }
   }, []);
 
-export const visibilityFilter = handleAction(setVisibilityFilter,(state,action)=> action.payload,'' )
+export const visibilityFilter = handleAction(setVisibilityFilter,(state,action)=> action.payload,'' );
+
+export const testEpicReducer =  handleAction(testEpic,(state,action) => state + 1,0);
 
 const todoApp = combineReducers({
     visibilityFilter,
-    todos
+    todos,
+    testEpicReducer
 });
 
 export default todoApp;

@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import { createEpicMiddleware } from 'redux-observable';
-import { ajax } from 'rxjs/Observable/dom/ajax';
+import 'rxjs';
 import createLogger from 'redux-logger';
 import rootReducer from './reducer';
 import rootEpic from './epics';
@@ -9,8 +9,8 @@ import rootEpic from './epics';
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const epicMiddleware = createEpicMiddleware(rootEpic, {
   dependencies: {
-    getJSON: ajax.getJSON,
-    post: ajax.post,
+    // getJSON: ajax.getJSON,
+    // post: ajax.post,
   }
 });
 const middleware = [epicMiddleware];

@@ -13,7 +13,10 @@ export const addTodo = createAction(ADD_TODO,text => ({
     complete:false
 }));
 export const toggleTodo = createAction(COMPLETE_TODO);
+
 export const setVisibilityFilter = createAction(SET_VISIBLE_FILTER);
+
+export const testEpic = createAction('testEpic');
 
 
 
